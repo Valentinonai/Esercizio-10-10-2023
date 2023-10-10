@@ -47,6 +47,8 @@ public class Main {
         printNumberOfWords(str);
         printWords(str);
 
+        input.close();
+
     }
 
     public static void printDuplicate(String[] app) {
