@@ -48,6 +48,7 @@ public class Main {
         for (int i = 0; i < n; i++) {
             array.add(x.nextInt(0, 100));
         }
+        Collections.sort(array);
         return array;
     }
 
