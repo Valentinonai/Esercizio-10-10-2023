@@ -27,11 +27,14 @@ public class Main {
                                 String nome = input.nextLine();
                                 System.out.println("Inserisci numero di telefono");
                                 int number = Integer.parseInt(input.nextLine());
+                                if (number <= 0) throw new Exception("Numero di telefono non valido");
                                 addNewContact(mapList, nome, number);
                                 bool2 = true;
                                 System.out.println(mapList.size());
+                            } catch (NumberFormatException e) {
+                                System.err.println("Devi inserire un numero");
                             } catch (Exception e) {
-                                System.out.println(e.getMessage());
+                                System.err.println(e.getMessage());
                             }
                         }
                         bool2 = false;
@@ -60,8 +63,10 @@ public class Main {
                                 int number = Integer.parseInt(input.nextLine());
                                 searchByPhone(mapList, number);
                                 bool2 = true;
+                            } catch (NumberFormatException e) {
+                                System.err.println("Devi inserire un numero");
                             } catch (Exception e) {
-                                System.out.println(e.getMessage());
+                                System.err.println(e.getMessage());
                                 bool2 = true;
                             }
                         }
@@ -108,7 +113,8 @@ public class Main {
     }
 
     public static void deleteByName(Map<String, Integer> mapList, String nome) {
-        mapList.remove(nome);
+       
+        if (mapList.remove(nome) == null) System.out.println("Elemento non trovato");
     }
 
     public static void searchByPhone(Map<String, Integer> mapList, int number) {
