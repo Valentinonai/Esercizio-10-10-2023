@@ -114,11 +114,15 @@ public class Main {
     public static void searchByPhone(Map<String, Integer> mapList, int number) {
 
         Set<String> keys = mapList.keySet();
-
+        boolean p = false;
         for (String x : keys) {
-            if (mapList.get(x) == number)
+            if (mapList.get(x) == number) {
                 System.out.println("utente: " + x + " phone: " + mapList.get(x));
+                p = true;
+            }
+
         }
+        if (!p) System.out.println("Utente non trovato");
     }
 
     public static void searchByName(Map<String, Integer> mapList, String name) {
