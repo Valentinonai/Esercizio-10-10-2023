@@ -20,14 +20,14 @@ public class Main {
             }
         }
         System.out.println("--------FN1-----------");
-        list = fn1(n);
+        list.addAll(fn1(n));
         for (Integer x : list) {
             System.out.println(x);
         }
 
         System.out.println("-------FN2----------");
 
-        list2 = fn2(list);
+        list2.addAll(fn2(list));
         for (Integer x : list2) {
             System.out.println(x);
         }
@@ -53,10 +53,10 @@ public class Main {
     }
 
     public static List<Integer> fn2(List<Integer> l1) {
+        List<Integer> app = new ArrayList<>(l1);
         List<Integer> l2 = new ArrayList<>(l1);
-        Collections.reverse(l1);
-        l2.addAll(l1);
-        Collections.reverse(l1);
+        Collections.reverse(app);
+        l2.addAll(app);
         return l2;
     }
 
