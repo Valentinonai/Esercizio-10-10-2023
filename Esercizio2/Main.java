@@ -13,6 +13,7 @@ public class Main {
             try {
                 System.out.println("Inserisci un numero intero");
                 n = Integer.parseInt(input.nextLine());
+                if (n <= 0) throw new Exception("Numero deve essere maggiore di zero");
                 bool = true;
             } catch (Exception e) {
                 System.out.println(e.getMessage());
