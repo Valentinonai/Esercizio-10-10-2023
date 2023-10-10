@@ -38,6 +38,8 @@ public class Main {
         fn3(list, true);
         System.out.println("Boolean false");
         fn3(list, false);
+
+        input.close();
     }
 
     public static List<Integer> fn1(int n) {
