@@ -31,10 +31,10 @@ public class Main {
                 try {
                     System.out.println("Inserisci parola n° " + (i + 1) + ":");
                     String word = input.nextLine();
-                    if (str.contains(word)) {
+                    if (!str.add(word)) {
                         app[cont] = word;
                         cont++;
-                    } else str.add(word);
+                    }
                     bool = true;
                 } catch (Exception e) {
                     System.out.println(e.getMessage());
